@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simple-webapp
+  namespace: webapp
+spec:
+  selector:
+    matchLabels:
+      app: simple-webapp
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: simple-webapp
+    spec:
+      containers:
+        - name: simple-webapp
+          image: docker.io/atwatanmalikm/webapp:2210160543
+          ports:
+            - containerPort: 80
+
