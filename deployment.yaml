@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: simple-webapp
+  name: flask-webapp
   namespace: webapp
 spec:
   selector:
     matchLabels:
-      app: simple-webapp
+      app: flask-webapp
   replicas: 2
   template:
     metadata:
       labels:
-        app: simple-webapp
+        app: flask-webapp
     spec:
       containers:
-        - name: simple-webapp
+        - name: flask-webapp
           image: docker.io/yolaadipratama/webapp:2212210801
           ports:
             - containerPort: 80
